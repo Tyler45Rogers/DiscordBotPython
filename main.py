@@ -141,7 +141,7 @@ async def playSong(guild, voice_client, interaction: discord.Interaction):
         uploader = song_info['uploader']
         webpage_url = song_info['webpage_url']
         # Play Song
-        player = discord.FFmpegPCMAudio(audio_url, **ffmpeg_options, executable="C:\\ffmpeg\\ffmpeg.exe")
+        player = discord.FFmpegPCMAudio(audio_url, **ffmpeg_options, executable="ffmpeg")
         voice_client.play(player)
         await interaction.followup.send(f"Playing **{title}** by **{uploader}**!\nURL: {webpage_url}")
         
