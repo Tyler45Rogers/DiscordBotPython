@@ -1,3 +1,4 @@
+import os
 import discord
 from discord import app_commands
 from discord.ext import commands
@@ -5,7 +6,7 @@ import yt_dlp
 import asyncio
 import random
 
-token = "TOKEN HERE"
+token = os.getenv("DISCORD_TOKEN")
 client = commands.Bot(command_prefix="/", intents=discord.Intents.default())
 
 yt_dl_opts = {'format': 'bestaudio/best'}
